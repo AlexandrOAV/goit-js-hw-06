@@ -10,6 +10,7 @@ if (EnteredEmail === '' || EnteredPassword === ''){
     inputObj.email = EnteredEmail;
     inputObj.password = EnteredPassword;
     console.log('entered next data user', inputObj);
+    event.currentTarget.reset();
     }
 };
 formEl.addEventListener('submit', validationForm)
