@@ -9,13 +9,15 @@ const boxesEl = document.getElementById('boxes');
 const inputEl = document.querySelector('#control, input');
 
 btnCreatEl.addEventListener('click', createBoxes)
-function createBoxes(amount) {
- inputEl.addEventListener('input', () =>inputEl.value);
-  console.log(inputEl.value);
+function createBoxes() {
+  const amount = (Number(inputEl.value));
+  destroyBoxes();
+  console.log(amount);
   let boxesArray = [];
   let width = '30px'
   let heigth = '30px'
-  for (let i = 1; i <= inputEl.value; i++){
+
+  for (let i = 1; i <= amount; i++){
     let divEl = document.createElement('div');
      divEl.style.backgroundColor = getRandomHexColor();
      divEl.style.margin = '5px';
