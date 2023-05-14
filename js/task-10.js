@@ -12,22 +12,20 @@ btnCreatEl.addEventListener('click', createBoxes)
 function createBoxes() {
   const amount = (Number(inputEl.value));
   destroyBoxes();
-  console.log(amount);
   let boxesArray = [];
-  let width = '30px'
-  let heigth = '30px'
+  let width = 30;
+  let heigth = 30;
 
   for (let i = 1; i <= amount; i++){
     let divEl = document.createElement('div');
      divEl.style.backgroundColor = getRandomHexColor();
      divEl.style.margin = '5px';
-     divEl.style.width = width;
-    divEl.style.height = heigth;
-    width = Number.parseInt(width)+10 +'px';
-    heigth = Number.parseInt(heigth)+10 +'px';
+     divEl.style.width = width +'px';
+    divEl.style.height = heigth + 'px';
+    width += 10;
+    heigth += 10;
     boxesArray.push(divEl);
   }
-  console.log(boxesArray);
   boxesEl.append(...boxesArray);
 }
 btndestroyEl.addEventListener('click', destroyBoxes);
